@@ -24,8 +24,8 @@ class Calificador:
     
 c = Calificador()
 
-print(f"¿Es valida? {c.validar_nota(85)}")
-print(f"¿Es valida? {c.validar_nota(-1)}")
-print(f"¿Es valida? {c.validar_nota(10)}")
+print(f"¿85 es valida? {c.validar_nota(85)}")
+print(f"¿-1 es valida? {c.validar_nota(-1)}")
+print(f"¿10 es valida? {c.validar_nota(10)}")
 print(f"Notas cargadas: {c.cargar_notas(85,92,110,78,-5,88)}")
 print(f"Promedio: {c.promedio()}")
