@@ -23,8 +23,10 @@ class CarroCompras:
 
 c = CarroCompras()
 
-c.agregar_articulo("pan",2.50)
-c.agregar_articulo("leche",3.00)
+c.agregar_articulo("Pan",2.75)
+c.agregar_articulo("Leche",3.25)
+c.agregar_articulo("Laptop",1500)
 
-print(c.total_carrito())
-print(c.articulos_por_rango(2.50,3.00))
+print(f"Articulos: {c.articulos}")
+print(f"Total: ${c.total_carrito():.2f}")
+print(f"Articulos entre el rango: {c.articulos_por_rango(2.50,10.00)}")

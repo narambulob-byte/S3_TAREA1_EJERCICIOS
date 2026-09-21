@@ -5,26 +5,33 @@ Clase AnalizadorNumeros que: (1) tenga método es_par(numero) que retorne True/F
 
 class AnalizadorNumeros:
     def __init__(self):
-        self.resultado = {'pares':[], 'impares':[]}
+        self.pares = []
+        self.impares = []
 
     def es_par(self,numero):
         return numero % 2 == 0
 
     def separar(self,*numeros):
-        self.resultado = {'pares':[],'impares':[]}
         for numero in numeros:
             if self.es_par(numero):
-                self.resultado['pares'].append(numero)
+                self.pares.append(numero)
             else:
-                self.resultado['impares'].append(numero)
-        return self.resultado
+                self.impares.append(numero)
+        return {'pares': self.pares, 'impares': self.impares}
 
     def cantidad_pares_impares(self):
-        cant_pares = len(self.resultado['pares'])
-        cant_impares = len(self.resultado['impares'])
-        return(cant_pares,cant_impares)
+        return (len(self.pares),len(self.impares))
 
 an = AnalizadorNumeros()
 
-print(an.separar(1,2,3,4,5))
-print(f"La cantidad de pares e impares son: {an.cantidad_pares_impares()}")
+print(f"¿Es par? {an.es_par(4)}")
+print(f"¿Es par? {an.es_par(7)}")
+
+resultado = an.separar(1,2,3,4,5,6,7)
+print(f"Pares e impares: {resultado}")
+
+pares, impares = an.cantidad_pares_impares()
+print(f"Cantidad de pares: {pares}")
+print(f"Cantidad de impares: {impares}")
+
+print(f"Cantidad (pares,impares): {an.cantidad_pares_impares()}")

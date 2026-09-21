@@ -18,13 +18,14 @@ class Calificador:
         return self.notas
 
     def promedio(self):
-        if not self.notas:
+        if len(self.notas) == 0:
             return 0
-        return sum(self.notas) / len(self.notas)
-
+        return sum(self.notas)/len(self.notas)
+    
 c = Calificador()
 
-resultado = c.cargar_notas(85,92,110,78,-5,88)
-
-print(resultado)
-print(c.promedio())
+print(f"¿Es valida? {c.validar_nota(85)}")
+print(f"¿Es valida? {c.validar_nota(-1)}")
+print(f"¿Es valida? {c.validar_nota(10)}")
+print(f"Notas cargadas: {c.cargar_notas(85,92,110,78,-5,88)}")
+print(f"Promedio: {c.promedio()}")

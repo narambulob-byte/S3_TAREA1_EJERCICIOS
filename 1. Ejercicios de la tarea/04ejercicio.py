@@ -13,14 +13,12 @@ class InversorSecuencia:
     def invertir_multiples(self,*listas):
         resultado = {}
         for lista in listas:
-            clave = tuple(lista)
-            resultado[clave] = self.invertir_lista(lista)
+            resultado[tuple(lista)]= self.invertir_lista(lista)
         return resultado
 
 inv = InversorSecuencia()
 
-lista_invertida = inv.invertir_lista([1,2,3])
-print(f"La lista invertida queda: {lista_invertida}")
+print(f"Invertida: {inv.invertir_lista([1,2,3,4])}")
 
-dic_invertidas = inv.invertir_multiples([1,2,3],["H","o","l","a"])
-print(f"Diccionario de listas invertidas: {dic_invertidas}")
+resultado = inv.invertir_multiples([1,2,3],["a","b","c"])
+print(f"Multiples: {resultado}")

@@ -6,15 +6,15 @@ Clase AnalizadorTexto que:
 
 class AnalizadorTexto:
     def __init__(self):
-        self.palabras_unicas = set()
-        self.orden_palabras = []
+        self.conjunto = set()
+        self.lista = []
 
     def agregar_palabra(self,palabra):
-        self.palabras_unicas.add(palabra)
-        self.orden_palabras.append(palabra)
+        self.conjunto.add(palabra)
+        self.lista.append(palabra)
 
     def contar_palabras(self):
-        return len(self.palabras_unicas)
+        return len(self.conjunto)
 
     def agregar_multiples(self,*args):
         for palabra in args:
@@ -22,6 +22,16 @@ class AnalizadorTexto:
 
 at = AnalizadorTexto()
 
-at.agregar_multiples("hola","mundo","hola")
+at.agregar_palabra("Nataly")
+at.agregar_palabra("Lizbeth")
+at.agregar_palabra("Arambulo")
+at.agregar_palabra("Bautista")
 
-print(at.contar_palabras())
+print(f"Lista: {at.lista}")
+print(f"Conjunto: {at.conjunto}")
+print(f"Unicas: {at.contar_palabras()}")
+
+at.agregar_multiples("Hola","mundo","Hola")
+
+print(f"Lista: {at.lista}")
+print(f"Palaras unicas: {at.contar_palabras()}")

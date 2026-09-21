@@ -12,17 +12,17 @@ class GestorTemperatura:
         self.temperaturas.append(temp)
 
     def minima(self):
-        if not self.temperaturas:
+        if len(self.temperaturas) == 0:
             return None
         return min(self.temperaturas)
 
     def maxima(self):
-        if not self.temperaturas:
+        if len(self.temperaturas) == 0:
             return None
         return max(self.temperaturas)
 
     def promedio(self):
-        if not self.temperaturas:
+        if len(self.temperaturas) == 0:
             return None
         return sum(self.temperaturas)/len(self.temperaturas)
 
@@ -32,7 +32,12 @@ class GestorTemperatura:
 
 gt = GestorTemperatura()
 
+gt.registrar_temperatura(28.5)
+gt.registrar_temperatura(31)
+
 gt.registrar_multiples(20,25,18,30)
-print(f"La temperatura minima es: {gt.minima()}")
-print(f"La temperatura maxima es: {gt.maxima()}")
-print(f"El promedio es: {gt.promedio()}")
+
+print(f"Temperaturas: {gt.temperaturas}")
+print(f"Minima: {gt.minima()}")
+print(f"Maxima: {gt.maxima()}")
+print(f"Promedio: {gt.promedio():.2f}")
